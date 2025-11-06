@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cr16qvxkng034"]
+[gd_scene load_steps=22 format=3 uid="uid://cr16qvxkng034"]
 
 [ext_resource type="Script" uid="uid://b0ccrfiapsd67" path="res://Player/PlayerControllerMono.cs" id="1_lpwd7"]
 [ext_resource type="Script" uid="uid://wxgp605d4fn" path="res://Player/Interaction/PlayerInteractionHandlerMono.cs" id="2_q84h6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dmm2hx7m8xjq5" path="res://Textures/SphereIcon.png" id="6_mu7kc"]
 [ext_resource type="PackedScene" uid="uid://dcig5eot87p8w" path="res://Inventory/TestSphere.tscn" id="7_xsqkg"]
 [ext_resource type="Script" uid="uid://clj8kng5rdlir" path="res://Inventory/InventoryHandlerMono.cs" id="8_l1aap"]
+[ext_resource type="Script" uid="uid://roi2l464o4yf" path="res://Player/Ui.cs" id="8_ttj6a"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jqxt5"]
 
@@ -30,6 +31,21 @@ metadata/_custom_type_script = "uid://bbk5hftoaoxl1"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kv1ul"]
 radius = 2.25705
+
+[sub_resource type="Gradient" id="Gradient_xb563"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fyqef"]
+noise_type = 3
+seed = 1024
+frequency = 0.0435
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_m6e0p"]
+width = 450
+height = 648
+noise = SubResource("FastNoiseLite_fyqef")
+color_ramp = SubResource("Gradient_xb563")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xb563"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q03lm"]
 bg_color = Color(0.223238, 0.24924, 0.26794, 1)
@@ -79,37 +95,179 @@ ItemTypes = Array[ExtResource("3_vjqh2")]([SubResource("Resource_b7jcg"), SubRes
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=1895555815]
 shape = SubResource("SphereShape3D_kv1ul")
 
-[node name="InventoryUI" type="Control" parent="." unique_id=1279914716 node_paths=PackedStringArray("PlayerBody", "InventoryGrid")]
+[node name="UI" type="Control" parent="." unique_id=1031257386]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("8_ttj6a")
+
+[node name="StaticSceneBG" type="TextureRect" parent="UI" unique_id=544021571]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GradientReact" type="TextureRect" parent="UI" unique_id=1492604737]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CharacterUI" type="Control" parent="UI/GradientReact" unique_id=1426546035]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UIBGColorRect" type="ColorRect" parent="UI/GradientReact/CharacterUI" unique_id=207708012]
+layout_mode = 0
+offset_right = 528.0
+offset_bottom = 645.0
+color = Color(0.5931336, 0.59313357, 0.59313357, 1)
+
+[node name="UIBGTextureRect" type="TextureRect" parent="UI/GradientReact/CharacterUI" unique_id=911893412]
+layout_mode = 0
+offset_right = 527.0
+offset_bottom = 643.0
+texture = SubResource("NoiseTexture2D_m6e0p")
+expand_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/GradientReact/CharacterUI" unique_id=85931109]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 526.0
+offset_bottom = 642.0
+
+[node name="Sections" type="VBoxContainer" parent="UI/GradientReact/CharacterUI/MarginContainer" unique_id=485515544]
+layout_mode = 2
+
+[node name="CharacterDetails" type="Control" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections" unique_id=256145699]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails" unique_id=427831863]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 37.0
+offset_right = 521.0
+offset_bottom = 364.0
+
+[node name="Details" type="HBoxContainer" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer" unique_id=1931972706]
+layout_mode = 2
+
+[node name="Stats" type="VBoxContainer" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details" unique_id=1847799908]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Nameplate" type="Control" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats" unique_id=667312365]
+layout_mode = 2
+
+[node name="MaterialsAndStats" type="Control" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats" unique_id=1094164462]
+layout_mode = 2
+
+[node name="PrimaryStats" type="Control" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats" unique_id=704854599]
+layout_mode = 2
+
+[node name="UIBGColorRect" type="ColorRect" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats/PrimaryStats" unique_id=1082433124]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 168.0
+offset_bottom = 220.0
+color = Color(0.5931336, 0.59313357, 0.59313357, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats/PrimaryStats" unique_id=539048462]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats/PrimaryStats/MarginContainer" unique_id=1197207715]
+layout_mode = 2
+
+[node name="AttackPowerItem" type="VBoxContainer" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats/PrimaryStats/MarginContainer/VBoxContainer" unique_id=372917133]
+layout_mode = 2
+
+[node name="ArmorItem" type="VBoxContainer" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats/PrimaryStats/MarginContainer/VBoxContainer" unique_id=1049015161]
+layout_mode = 2
+
+[node name="LifeItem" type="VBoxContainer" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats/PrimaryStats/MarginContainer/VBoxContainer" unique_id=2081631039]
+layout_mode = 2
+
+[node name="Attributes" type="Control" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats" unique_id=1311848250]
+layout_mode = 2
+
+[node name="CharacterEquipaments" type="Control" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details" unique_id=1424706613]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Level" type="Control" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails" unique_id=62007945]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/Level" unique_id=1376020876]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 34.0
+offset_right = 20.0
+offset_bottom = 74.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/Level" unique_id=372358937]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 34.0
+offset_right = 20.0
+offset_bottom = 74.0
+texture = SubResource("NoiseTexture2D_xb563")
+expand_mode = 4
+flip_h = true
+flip_v = true
+
+[node name="Label" type="Label" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/Level" unique_id=328316207]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 32.0
+offset_right = 21.0
+offset_bottom = 73.0
+text = "59"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InventoryUI" type="Control" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections" unique_id=1279914716 node_paths=PackedStringArray("PlayerBody", "InventoryGrid")]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.2
 script = ExtResource("8_l1aap")
-PlayerBody = NodePath("..")
+PlayerBody = NodePath("../../../../../..")
 CollisionMask = 1
 InventoryGrid = NodePath("Panel/MarginContainer/GridContainer")
 InventorySlotPrefab = ExtResource("4_q6mek")
 
-[node name="Panel" type="Panel" parent="InventoryUI" unique_id=819451592]
+[node name="Panel" type="Panel" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/InventoryUI" unique_id=819451592]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = -1
+anchor_top = -0.024
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 49.0
-offset_top = -328.0
-offset_right = 414.0
-offset_bottom = -43.0
+offset_left = 1.0
+offset_top = 0.119999886
+offset_right = 1.0
+offset_bottom = 4.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_q03lm")
 
-[node name="MarginContainer" type="MarginContainer" parent="InventoryUI/Panel" unique_id=553429117]
+[node name="MarginContainer" type="MarginContainer" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/InventoryUI/Panel" unique_id=553429117]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 2.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 5
@@ -117,13 +275,13 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="GridContainer" type="GridContainer" parent="InventoryUI/Panel/MarginContainer" unique_id=562569715]
+[node name="GridContainer" type="GridContainer" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/InventoryUI/Panel/MarginContainer" unique_id=562569715]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
 columns = 5
 
-[connection signal="OnItemPickedUp" from="InteractionArea" to="InventoryUI" method="PickupItem"]
+[connection signal="OnItemPickedUp" from="InteractionArea" to="UI/GradientReact/CharacterUI/MarginContainer/Sections/InventoryUI" method="PickupItem"]
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="OnObjectEnteredArea"]
 [connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="OnObjectExitedArea"]

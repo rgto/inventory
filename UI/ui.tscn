@@ -1,0 +1,160 @@
+[gd_scene load_steps=5 format=3 uid="uid://clvkwe8swlnrc"]
+
+[sub_resource type="Gradient" id="Gradient_xb563"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fyqef"]
+noise_type = 3
+seed = 1024
+frequency = 0.0435
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_m6e0p"]
+width = 450
+height = 648
+noise = SubResource("FastNoiseLite_fyqef")
+color_ramp = SubResource("Gradient_xb563")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xb563"]
+
+[node name="UI" type="Control" unique_id=1031257386]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StaticSceneBG" type="TextureRect" parent="." unique_id=544021571]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GradientReact" type="TextureRect" parent="." unique_id=1492604737]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CharacterUI" type="Control" parent="GradientReact" unique_id=1426546035]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UIBGColorRect" type="ColorRect" parent="GradientReact/CharacterUI" unique_id=207708012]
+layout_mode = 0
+offset_right = 528.0
+offset_bottom = 645.0
+color = Color(0.5931336, 0.59313357, 0.59313357, 1)
+
+[node name="UIBGTextureRect" type="TextureRect" parent="GradientReact/CharacterUI" unique_id=911893412]
+layout_mode = 0
+offset_right = 527.0
+offset_bottom = 643.0
+texture = SubResource("NoiseTexture2D_m6e0p")
+expand_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="GradientReact/CharacterUI" unique_id=85931109]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 526.0
+offset_bottom = 642.0
+
+[node name="Sections" type="VBoxContainer" parent="GradientReact/CharacterUI/MarginContainer" unique_id=485515544]
+layout_mode = 2
+
+[node name="CharacterDetails" type="Control" parent="GradientReact/CharacterUI/MarginContainer/Sections" unique_id=256145699]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="MarginContainer" type="MarginContainer" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails" unique_id=427831863]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 37.0
+offset_right = 521.0
+offset_bottom = 385.0
+
+[node name="Details" type="HBoxContainer" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer" unique_id=1931972706]
+layout_mode = 2
+
+[node name="Stats" type="VBoxContainer" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details" unique_id=1847799908]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Nameplate" type="Control" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats" unique_id=667312365]
+layout_mode = 2
+
+[node name="MaterialsAndStats" type="Control" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats" unique_id=1094164462]
+layout_mode = 2
+
+[node name="PrimaryStats" type="Control" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats" unique_id=704854599]
+layout_mode = 2
+
+[node name="UIBGColorRect" type="ColorRect" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats/PrimaryStats" unique_id=1082433124]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 168.0
+offset_bottom = 220.0
+color = Color(0.5931336, 0.59313357, 0.59313357, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats/PrimaryStats" unique_id=539048462]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats/PrimaryStats/MarginContainer" unique_id=1197207715]
+layout_mode = 2
+
+[node name="AttackPowerItem" type="VBoxContainer" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats/PrimaryStats/MarginContainer/VBoxContainer" unique_id=372917133]
+layout_mode = 2
+
+[node name="ArmorItem" type="VBoxContainer" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats/PrimaryStats/MarginContainer/VBoxContainer" unique_id=1049015161]
+layout_mode = 2
+
+[node name="LifeItem" type="VBoxContainer" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats/PrimaryStats/MarginContainer/VBoxContainer" unique_id=2081631039]
+layout_mode = 2
+
+[node name="Attributes" type="Control" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details/Stats" unique_id=1311848250]
+layout_mode = 2
+
+[node name="CharacterEquipaments" type="Control" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/MarginContainer/Details" unique_id=1424706613]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Level" type="Control" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails" unique_id=62007945]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/Level" unique_id=1376020876]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 34.0
+offset_right = 20.0
+offset_bottom = 74.0
+
+[node name="TextureRect" type="TextureRect" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/Level" unique_id=372358937]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 34.0
+offset_right = 20.0
+offset_bottom = 74.0
+texture = SubResource("NoiseTexture2D_xb563")
+expand_mode = 4
+flip_h = true
+flip_v = true
+
+[node name="Label" type="Label" parent="GradientReact/CharacterUI/MarginContainer/Sections/CharacterDetails/Level" unique_id=328316207]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 32.0
+offset_right = 21.0
+offset_bottom = 73.0
+text = "59"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Inventory" type="Control" parent="GradientReact/CharacterUI/MarginContainer/Sections" unique_id=778577205]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
