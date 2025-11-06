@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx0701gg23k6l"]
+
+[ext_resource type="Script" uid="uid://clj8kng5rdlir" path="res://Inventory/InventoryHandlerMono.cs" id="1_e1k8u"]
+[ext_resource type="PackedScene" uid="uid://c152xf4ysp1y" path="res://Inventory/InventorySlot.tscn" id="2_1w3up"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q03lm"]
+bg_color = Color(0.223238, 0.24924, 0.26794, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0.129412)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.168627)
+shadow_size = 3
+shadow_offset = Vector2(-1, 3)
+
+[node name="InventoryUI" type="Control" unique_id=111176998 node_paths=PackedStringArray("InventoryGrid")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e1k8u")
+CollisionMask = 1
+InventoryGrid = NodePath("Panel/MarginContainer/GridContainer")
+InventorySlotPrefab = ExtResource("2_1w3up")
+
+[node name="Panel" type="Panel" parent="." unique_id=272675495]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -323.0
+offset_right = -35.0
+offset_bottom = -38.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q03lm")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1420432767]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer" unique_id=492728805]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 5

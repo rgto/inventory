@@ -18,7 +18,10 @@ public partial class InventoryHandlerMono : Control
     int EquippedSlot = -1;
 
     public override void _Ready()
-	{
+    {
+        // Inventário começa fechado
+        Visible = false;
+
 		for (int i = 0; i < ItemSlotsCount; i++)
 		{
             InventorySlotMono slot = InventorySlotPrefab.Instantiate() as InventorySlotMono;
@@ -30,18 +33,26 @@ public partial class InventoryHandlerMono : Control
         }
 	}
 
-    public void PickupItem(ItemDataMono item)
+	public override void _Process(double delta)
 	{
+		// Alterna visibilidade com a tecla "I"
+		if (Input.IsActionJustPressed("inventory_toggle"))
+		{
+			Visible = !Visible;
+		}
+	}
+    public void PickupItem(ItemDataMono item)
+    {
         bool foundSlot = false;
         foreach (InventorySlotMono slot in InventorySlots)
-		{
-			if (!slot.SlotFilled)
-			{
-				slot.FillSlot(item, false);
+        {
+            if (!slot.SlotFilled)
+            {
+                slot.FillSlot(item, false);
                 foundSlot = true;
                 break;
             }
-		}
+        }
 
         if (!foundSlot)
         {
