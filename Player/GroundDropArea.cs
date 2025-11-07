@@ -28,55 +28,60 @@ public partial class GroundDropArea : ColorRect
             return;
         }
 
-        GD.Print("Item dropped on the ground!");
         var dict = data.AsGodotDictionary();
-        if (!dict.ContainsKey("ID"))
-        {
-            GD.PrintErr("DropData não contém a chave 'ID'!");
-            return;
-        }
-
         int slotId = dict["ID"].As<int>();
 
-        // Procura o slot com esse ID dentro do InventoryHandler
         var foundSlot = FindSlotBySlotID(slotId, InventoryHandler);
         if (foundSlot == null)
         {
-            GD.PrintErr($"Nenhum slot com ID {slotId} encontrado!");
+            GD.PrintErr($"[Drop] Nenhum slot com ID {slotId} encontrado!");
             return;
         }
 
         if (foundSlot.SlotData == null)
         {
-            GD.PrintErr($"Slot {slotId} não contém nenhum item!");
+            GD.PrintErr($"[Drop] Slot {slotId} está vazio (sem dados de item)!");
             return;
         }
 
-        //var itemPrefab = foundSlot.SlotData.ItemModelPrefab;
-        var itemPrefabPath = $"res://Inventory/{foundSlot.SlotData.ItemName}.tscn";
+        var itemPrefab = foundSlot.SlotData.ItemModelPrefab;
 
-        if (itemPrefabPath == null)
+        if (itemPrefab == null)
         {
-            GD.PrintErr($"ItemModelPrefab não definido para o item '{foundSlot.SlotData.ItemName}'!");
+            GD.PrintErr($"[Drop] ItemModelPrefab nulo para {foundSlot.SlotData.ItemName}");
             return;
         }
 
-        // Remove o item do slot.
-        foundSlot.FillSlot(null, false);
-
-        if (ResourceLoader.Exists(itemPrefabPath))
+        // Verifica se é um PackedScene vazio (subrecurso inválido)
+        if (!itemPrefab.CanInstantiate())
         {
-            var itemPrefab = GD.Load<PackedScene>(itemPrefabPath);
-            GD.Print($"[Fallback] Usando prefab carregado de '{itemPrefabPath}'");
+            // Extrai o caminho real do arquivo principal .tscn
+            string basePath = itemPrefab.ResourcePath;
 
-            // Instancia o item na cena
-            var newItem = itemPrefab.Instantiate() as Node3D;
-            PlayerBody.GetParent().AddChild(newItem);
-            newItem.GlobalPosition = InventoryHandler.GetWorldMousePosition();
+            if (basePath.Contains("::"))
+            {
+                basePath = basePath.Split("::")[0];
+            }
 
-            GD.Print($"Item '{foundSlot.SlotData.ItemName}' dropado com sucesso!");
+            GD.Print($"[Fallback] Recarregando cena real de '{basePath}'");
+
+            if (ResourceLoader.Exists(basePath))
+            {
+                itemPrefab = GD.Load<PackedScene>(basePath);
+            }
         }
-       
+
+        if (itemPrefab == null || !itemPrefab.CanInstantiate())
+        {
+            GD.PrintErr($"[Drop] Falha ao carregar prefab real de '{foundSlot.SlotData.ItemName}'!");
+            return;
+        }
+
+        
+        Node3D newItem = itemPrefab.Instantiate<Node3D>();
+        PlayerBody.GetParent().AddChild(newItem);
+        newItem.GlobalPosition = InventoryHandler.GetWorldMousePosition();
+        GD.Print($"[Drop] '{foundSlot.SlotData.ItemName}' instanciado com sucesso!");
     }
 
     private InventorySlotMono FindSlotBySlotID(int slotId, MasterInventoryManager inventoryHandler)

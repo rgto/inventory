@@ -1,13 +1,16 @@
-[gd_scene load_steps=9 format=4 uid="uid://dcig5eot87p8w"]
+[gd_scene load_steps=10 format=4 uid="uid://dcig5eot87p8w"]
 
 [ext_resource type="Script" uid="uid://uj238sl7b45d" path="res://Inventory/InteractableItemMono.cs" id="1_3ypjk"]
 [ext_resource type="Texture2D" uid="uid://dmm2hx7m8xjq5" path="res://Textures/SphereIcon.png" id="2_nanba"]
 [ext_resource type="Script" uid="uid://bbk5hftoaoxl1" path="res://Inventory/ItemDataMono.cs" id="2_vqocb"]
 
+[sub_resource type="PackedScene" id="PackedScene_nanba"]
+
 [sub_resource type="Resource" id="Resource_nanba"]
 script = ExtResource("2_vqocb")
-ItemName = "Sphere"
+ItemName = "TestSphere"
 Icon = ExtResource("2_nanba")
+ItemModelPrefab = SubResource("PackedScene_nanba")
 metadata/_custom_type_script = "uid://bbk5hftoaoxl1"
 
 [sub_resource type="SphereMesh" id="SphereMesh_0p657"]
@@ -32,7 +35,7 @@ emission_energy_multiplier = 3.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lny3i"]
 
-[node name="ItemTestCube" type="RigidBody3D" unique_id=990682677 node_paths=PackedStringArray("ItemHighlightMesh")]
+[node name="TestSphere" type="RigidBody3D" unique_id=990682677 node_paths=PackedStringArray("ItemHighlightMesh")]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_3ypjk")
