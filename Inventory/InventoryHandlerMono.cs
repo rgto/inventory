@@ -13,7 +13,7 @@ public partial class InventoryHandlerMono : Control
     [Export] public GridContainer InventoryGrid { get; set; }
 	[Export] public PackedScene  InventorySlotPrefab { get; set; }
 
-	List<InventorySlotMono> InventorySlots = new List<InventorySlotMono>();
+	public List<InventorySlotMono> InventorySlots = new List<InventorySlotMono>();
 
     int EquippedSlot = -1;
 
@@ -94,25 +94,25 @@ public partial class InventoryHandlerMono : Control
         InventorySlots[fromSlotID].FillSlot(toSlotItem, EquippedSlot == fromSlotID);
     }
 
-    public override bool _CanDropData(Vector2 atPosition, Variant data)
-    {
-        return data.VariantType == Variant.Type.Dictionary && (string)data.AsGodotDictionary()["Type"] == "Item";
-    }
-
-    public override void _DropData(Vector2 atPosition, Variant data)
-    {
-        int id = (int)data.AsGodotDictionary()["ID"];
-        if (EquippedSlot == id)
-        {
-            EquippedSlot = -1;
-        }
-
-        var newItem = InventorySlots[id].SlotData.ItemModelPrefab.Instantiate() as Node3D;
-
-		InventorySlots[id].FillSlot(null, false);
-		PlayerBody.GetParent().AddChild(newItem);
-		newItem.GlobalPosition = GetWorldMousePosition();
-    }
+    //public override bool _CanDropData(Vector2 atPosition, Variant data)
+    //{
+    //    return data.VariantType == Variant.Type.Dictionary && (string)data.AsGodotDictionary()["Type"] == "Item";
+    //}
+//
+    //public override void _DropData(Vector2 atPosition, Variant data)
+    //{
+    //    int id = (int)data.AsGodotDictionary()["ID"];
+    //    if (EquippedSlot == id)
+    //    {
+    //        EquippedSlot = -1;
+    //    }
+//
+    //    var newItem = InventorySlots[id].SlotData.ItemModelPrefab.Instantiate() as Node3D;
+//
+	//	InventorySlots[id].FillSlot(null, false);
+	//	PlayerBody.GetParent().AddChild(newItem);
+	//	newItem.GlobalPosition = GetWorldMousePosition();
+    //}
 
 	public Vector3 GetWorldMousePosition()
 	{

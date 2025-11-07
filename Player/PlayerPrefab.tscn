@@ -1,33 +1,17 @@
-[gd_scene load_steps=24 format=3 uid="uid://cr16qvxkng034"]
+[gd_scene load_steps=18 format=3 uid="uid://cr16qvxkng034"]
 
 [ext_resource type="Script" uid="uid://b0ccrfiapsd67" path="res://Player/PlayerControllerMono.cs" id="1_lpwd7"]
 [ext_resource type="Script" uid="uid://wxgp605d4fn" path="res://Player/Interaction/PlayerInteractionHandlerMono.cs" id="2_q84h6"]
-[ext_resource type="Script" uid="uid://bbk5hftoaoxl1" path="res://Inventory/ItemDataMono.cs" id="3_vjqh2"]
-[ext_resource type="PackedScene" uid="uid://cuiklvlmyu8n6" path="res://Inventory/TestCube.tscn" id="4_g74hu"]
 [ext_resource type="PackedScene" uid="uid://c152xf4ysp1y" path="res://Inventory/InventorySlot.tscn" id="4_q6mek"]
-[ext_resource type="Texture2D" uid="uid://djx5ov4jr3f3i" path="res://Textures/BoxIcon.png" id="4_s6nxe"]
-[ext_resource type="Texture2D" uid="uid://dmm2hx7m8xjq5" path="res://Textures/SphereIcon.png" id="6_mu7kc"]
-[ext_resource type="PackedScene" uid="uid://dcig5eot87p8w" path="res://Inventory/TestSphere.tscn" id="7_xsqkg"]
-[ext_resource type="Script" uid="uid://clj8kng5rdlir" path="res://Inventory/InventoryHandlerMono.cs" id="8_l1aap"]
 [ext_resource type="Script" uid="uid://roi2l464o4yf" path="res://Player/Ui.cs" id="8_ttj6a"]
+[ext_resource type="Script" uid="uid://nafc2t1x3rcx" path="res://Player/GroundDropArea.cs" id="9_ttj6a"]
+[ext_resource type="Script" uid="uid://qgep37rcci0h" path="res://Player/MasterInventoryManager.cs" id="10_l1aap"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jqxt5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_i50ut"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_656tx"]
-
-[sub_resource type="Resource" id="Resource_b7jcg"]
-script = ExtResource("3_vjqh2")
-Icon = ExtResource("6_mu7kc")
-ItemModelPrefab = ExtResource("7_xsqkg")
-metadata/_custom_type_script = "uid://bbk5hftoaoxl1"
-
-[sub_resource type="Resource" id="Resource_q84h6"]
-script = ExtResource("3_vjqh2")
-Icon = ExtResource("4_s6nxe")
-ItemModelPrefab = ExtResource("4_g74hu")
-metadata/_custom_type_script = "uid://bbk5hftoaoxl1"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kv1ul"]
 radius = 2.25705
@@ -124,11 +108,11 @@ shape = SubResource("CapsuleShape3D_656tx")
 transform = Transform3D(1, 0, 0, 0, 0.997021, 0.0771367, 0, -0.0771367, 0.997021, 0, 1.29109, 4.69295)
 cull_mask = 786431
 
-[node name="InteractionArea" type="Area3D" parent="." unique_id=1025311033]
+[node name="InteractionArea" type="Area3D" parent="." unique_id=1025311033 node_paths=PackedStringArray("InventoryManager")]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("2_q84h6")
-ItemTypes = Array[ExtResource("3_vjqh2")]([SubResource("Resource_b7jcg"), SubResource("Resource_q84h6")])
+InventoryManager = NodePath("../UI/GradientReact/CharacterUI/MarginContainer/Sections/TabContainer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=1895555815]
 shape = SubResource("SphereShape3D_kv1ul")
@@ -141,6 +125,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_ttj6a")
+
+[node name="GroundDropArea" type="ColorRect" parent="UI" unique_id=500762792 node_paths=PackedStringArray("PlayerBody", "InventoryHandler")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("9_ttj6a")
+PlayerBody = NodePath("../..")
+InventoryHandler = NodePath("../GradientReact/CharacterUI/MarginContainer/Sections/TabContainer")
 
 [node name="StaticSceneBG" type="TextureRect" parent="UI" unique_id=544021571]
 layout_mode = 0
@@ -274,23 +270,25 @@ text = "59"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TabContainer" type="TabContainer" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections" unique_id=1241731643]
+[node name="TabContainer" type="TabContainer" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections" unique_id=1241731643 node_paths=PackedStringArray("PlayerBody", "EquipmentGrid", "ConsumableGrid", "QuestGrid")]
 custom_minimum_size = Vector2(100, 270)
 layout_mode = 2
 theme_override_constants/side_margin = 18
 current_tab = 0
+script = ExtResource("10_l1aap")
+PlayerBody = NodePath("../../../../../..")
+CollisionMask = 1
+InventorySlotPrefab = ExtResource("4_q6mek")
+EquipmentGrid = NodePath("Equipament/Panel/MarginContainer/GridContainer")
+ConsumableGrid = NodePath("Consumable/Panel1/MarginContainer1/GridContainer1")
+QuestGrid = NodePath("Quest/Panel/MarginContainer/GridContainer")
+EquipmentSlotsCount = 21
 
-[node name="Equipament" type="Control" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/TabContainer" unique_id=1279914716 node_paths=PackedStringArray("PlayerBody", "InventoryGrid")]
+[node name="Equipament" type="Control" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/TabContainer" unique_id=1279914716]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.2
-script = ExtResource("8_l1aap")
-ItemSlotsCount = 21
-PlayerBody = NodePath("../../../../../../..")
-CollisionMask = 1
-InventoryGrid = NodePath("Panel/MarginContainer/GridContainer")
-InventorySlotPrefab = ExtResource("4_q6mek")
 metadata/_tab_index = 0
 
 [node name="Panel" type="Panel" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/TabContainer/Equipament" unique_id=819451592]
@@ -333,18 +331,12 @@ theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
 columns = 7
 
-[node name="Consumable" type="Control" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/TabContainer" unique_id=975005107 node_paths=PackedStringArray("PlayerBody", "InventoryGrid")]
+[node name="Consumable" type="Control" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/TabContainer" unique_id=975005107]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.2
-script = ExtResource("8_l1aap")
-ItemSlotsCount = 21
-PlayerBody = NodePath("../../../../../../..")
-CollisionMask = 1
-InventoryGrid = NodePath("Panel1/MarginContainer1/GridContainer1")
-InventorySlotPrefab = ExtResource("4_q6mek")
 metadata/_tab_index = 1
 
 [node name="Panel1" type="Panel" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/TabContainer/Consumable" unique_id=1611976708]
@@ -387,17 +379,11 @@ theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
 columns = 7
 
-[node name="Quest" type="Control" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/TabContainer" unique_id=1088106041 node_paths=PackedStringArray("PlayerBody", "InventoryGrid")]
+[node name="Quest" type="Control" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/TabContainer" unique_id=1088106041]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.2
-script = ExtResource("8_l1aap")
-ItemSlotsCount = 21
-PlayerBody = NodePath("../../../../../../..")
-CollisionMask = 1
-InventoryGrid = NodePath("Panel/MarginContainer/GridContainer")
-InventorySlotPrefab = ExtResource("4_q6mek")
 metadata/_tab_index = 2
 
 [node name="Panel" type="Panel" parent="UI/GradientReact/CharacterUI/MarginContainer/Sections/TabContainer/Quest" unique_id=820452958]
@@ -437,6 +423,5 @@ theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
 columns = 7
 
-[connection signal="OnItemPickedUp" from="InteractionArea" to="UI/GradientReact/CharacterUI/MarginContainer/Sections/TabContainer/Equipament" method="PickupItem"]
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="OnObjectEnteredArea"]
 [connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="OnObjectExitedArea"]

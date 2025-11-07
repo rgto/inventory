@@ -1,14 +1,14 @@
+// PlayerInteractionHandlerMono.cs (Versão Simplificada e Corrigida)
 using Godot;
-using Godot.Collections;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
 [GlobalClass]
 public partial class PlayerInteractionHandlerMono : Area3D
 {
-    [Signal] public delegate void OnItemPickedUpEventHandler(ItemDataMono item);
-    [Export] public Array<ItemDataMono> ItemTypes { get; set; } = new Array<ItemDataMono>();
+    // Crie uma referência direta para o gerente do inventário.
+    // Você vai arrastar o nó do TabContainer para cá no editor.
+    [Export] public MasterInventoryManager InventoryManager { get; set; }
 
     private List<InteractableItemMono> NearbyBodies = new List<InteractableItemMono>();
 
@@ -22,41 +22,32 @@ public partial class PlayerInteractionHandlerMono : Area3D
 
     private void PickupNearestItem()
     {
+        // A lógica para encontrar o item mais próximo continua a mesma
         InteractableItemMono nearestItem = NearbyBodies.OrderBy(x => x.GlobalPosition.DistanceTo(GlobalPosition)).FirstOrDefault();
 
         if (nearestItem != null)
         {
-            nearestItem.QueueFree();
+            // Verificação de segurança: O item no mundo tem um "RG" (ItemData) configurado?
+            if (nearestItem.ItemData == null)
+            {
+                GD.PrintErr($"O item '{nearestItem.Name}' foi pego, mas não tem um ItemData associado no editor!");
+                return;
+            }
+
+            // Entrega o ItemData diretamente para o inventário!
+            InventoryManager.PickupItem(nearestItem.ItemData);
+
+            // Remove o item da lista e do mundo
             NearbyBodies.Remove(nearestItem);
-
-            ItemDataMono template = ItemTypes.FirstOrDefault(x => x.ItemModelPrefab.ResourcePath == nearestItem.SceneFilePath);
-            GD.Print("=== DEBUG ITEM PATHS ===");
-            foreach (var x in ItemTypes)
-            {
-                GD.Print($"ItemType: {x.ItemName} | Path: {x.ItemModelPrefab?.ResourcePath}");
-            }
-            GD.Print($"NearestItem.SceneFilePath: {nearestItem.SceneFilePath}");
-            GD.Print("========================");
-
-            if (template != null)
-            {
-                GD.Print("Item id:" + ItemTypes.IndexOf(template) + " Item Name:" + template.ItemName);
-                EmitSignal(SignalName.OnItemPickedUp, template);
-            }
-            else
-            {
-                GD.PrintErr("Item not found");
-            }
+            nearestItem.QueueFree();
         }
     }
-
 
     public void OnObjectEnteredArea(Node3D body)
     {
         if (body is InteractableItemMono item)
         {
             item.GainFocus();
-
             NearbyBodies.Add(item);
         }
     }
@@ -66,7 +57,6 @@ public partial class PlayerInteractionHandlerMono : Area3D
         if (body is InteractableItemMono item && NearbyBodies.Contains(item))
         {
             item.LoseFocus();
-
             NearbyBodies.Remove(item);
         }
     }
