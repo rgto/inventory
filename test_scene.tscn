@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dit5fjgxvvysf"]
+[gd_scene load_steps=11 format=3 uid="uid://dit5fjgxvvysf"]
 
 [ext_resource type="PackedScene" uid="uid://cr16qvxkng034" path="res://Player/PlayerPrefab.tscn" id="1_yqaf2"]
-[ext_resource type="PackedScene" uid="uid://brpq524gd22b7" path="res://Items/Boots.tscn" id="2_ia1lp"]
+[ext_resource type="PackedScene" uid="uid://brpq524gd22b7" path="res://Items/Red_Boots.tscn" id="2_ia1lp"]
+[ext_resource type="PackedScene" uid="uid://dlrpebw3lna73" path="res://Items/White_Boots.tscn" id="3_sasra"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pukp7"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -65,36 +66,25 @@ shape = SubResource("BoxShape3D_rt1in")
 [node name="PlayerBody" parent="." unique_id=1784928478 instance=ExtResource("1_yqaf2")]
 
 [node name="Red_Boots2" parent="." unique_id=265327318 instance=ExtResource("2_ia1lp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5004053, 7.500726, -5.680482)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5004053, 4.7500124, -5.680482)
 
 [node name="Red_Boots4" parent="." unique_id=682718033 instance=ExtResource("2_ia1lp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5004053, 7.2226944, -5.680482)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5004053, 4.47198, -6.1084824)
 
 [node name="Red_Boots3" parent="." unique_id=973548641 instance=ExtResource("2_ia1lp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5004053, 7.1300173, -5.680482)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5004053, 5.5293026, -5.191641)
 
 [node name="Red_Boots5" parent="." unique_id=1878528492 instance=ExtResource("2_ia1lp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5004053, 7.408049, -5.680482)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5004053, 4.6573343, -4.7524114)
 
-[node name="Red_Boots6" parent="." unique_id=1991614157 instance=ExtResource("2_ia1lp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5004053, 7.3153715, -5.680482)
+[node name="White_Boots2" parent="." unique_id=167608643 instance=ExtResource("3_sasra")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.299985, -4.9120736)
 
-[node name="Red_Boots7" parent="." unique_id=703175822 instance=ExtResource("2_ia1lp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.01893, -5.489917)
+[node name="White_Boots3" parent="." unique_id=1531432115 instance=ExtResource("3_sasra")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.392662, -5.2649837)
 
-[node name="Red_Boots8" parent="." unique_id=1569130087 instance=ExtResource("2_ia1lp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.740898, -5.489917)
+[node name="White_Boots4" parent="." unique_id=1935520129 instance=ExtResource("3_sasra")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.299985, -5.6190987)
 
-[node name="Red_Boots9" parent="." unique_id=462736535 instance=ExtResource("2_ia1lp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.6482205, -5.489917)
-
-[node name="Red_Boots10" parent="." unique_id=753270346 instance=ExtResource("2_ia1lp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.9262524, -5.489917)
-
-[node name="Red_Boots11" parent="." unique_id=2039290231 instance=ExtResource("2_ia1lp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.8335752, -5.489917)
-
-[node name="Red_Boots12" parent="." unique_id=1346738839 instance=ExtResource("2_ia1lp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5555434, -5.489917)
-
-[node name="Red_Boots" parent="." unique_id=2067887933 instance=ExtResource("2_ia1lp")]
+[node name="White_Boots" parent="." unique_id=744962766 instance=ExtResource("3_sasra")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2073073, -6.003063)
