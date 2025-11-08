@@ -1,0 +1,13 @@
+[gd_resource type = "ShaderMaterial" load_steps=5 format=3 uid="uid://dlinmhwlb2ng6"]
+
+[ext_resource type="Shader" uid="uid://b0q2wjobnyadf" path="res://Shaders/M_Sword_Golden.tres" id="5_c2vqd"]
+[ext_resource type="Texture2D" uid="uid://c5qn1jsfn08cl" path="res://Eileen/Textures/Weapon_Golden/T_Sword_Normal.png" id="1_diopo"]
+[ext_resource type="Texture2D" uid="uid://xrmaikbjspn6" path="res://Eileen/Textures/Weapon_Golden/T_Sword_Base_Color.png" id="2_bl3r1"]
+[ext_resource type="Texture2D" uid="uid://b6r4afnumi8wv" path="res://Eileen/Textures/Weapon_Golden/T_Sword_Metallic.png" id="3_jwexu"]
+[ext_resource type="Texture2D" uid="uid://inwwq6gk4ep5" path="res://Eileen/Textures/Weapon_Golden/T_Sword_AO.png" id="4_nuh4e"]
+
+[resource]
+resource_name = "M_Sword_Golden"
+render_priority = 0
+shader = ExtResource("5_c2vqd")
+shader_parameter/Generated_T_Sword_Normal = ExtResource("1_diopo")

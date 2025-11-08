@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://di72h1wmojfbn"]
+
+[ext_resource type="PackedScene" uid="uid://c4h0udtxq88w3" path="res://Eileen/Mesh/Weapon/SM_Sword_Golden.glb" id="1_cftua"]
+[ext_resource type="Material" uid="uid://dlinmhwlb2ng6" path="res://Eileen/Materials/Weapon/M_Sword_Golden.tres" id="2_c0oqn"]
+
+[node name = "SM_Sword_Golden" instance = ExtResource("1_cftua")]
+
+[node name="Mesh" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_c0oqn")

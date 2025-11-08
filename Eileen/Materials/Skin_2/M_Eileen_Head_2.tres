@@ -1,0 +1,12 @@
+[gd_resource type = "ShaderMaterial" load_steps=4 format=3 uid="uid://co8jqb4inh0r3"]
+
+[ext_resource type="Shader" uid="uid://c6tbcs3wgtmvy" path="res://Shaders/M_Eileen_Head_2.tres" id="4_7ije0"]
+[ext_resource type="Texture2D" uid="uid://ca5deplkjant7" path="res://Eileen/Textures/Skin_1/T_Eileen_Head_Normal.png" id="1_b25pq"]
+[ext_resource type="Texture2D" uid="uid://cke343dx22hct" path="res://Eileen/Textures/Skin_2/T_Eileen_Head_Base_Color.png" id="2_jys50"]
+[ext_resource type="Texture2D" uid="uid://buw5kxg8irdrs" path="res://Eileen/Textures/Skin_1/T_Eileen_Head_Metallic.png" id="3_c7pvt"]
+
+[resource]
+resource_name = "M_Eileen_Head_2"
+render_priority = 0
+shader = ExtResource("4_7ije0")
+shader_parameter/Generated_T_Eileen_Head_Normal = ExtResource("1_b25pq")

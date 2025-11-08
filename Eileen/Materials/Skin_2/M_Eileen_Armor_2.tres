@@ -1,0 +1,13 @@
+[gd_resource type = "ShaderMaterial" load_steps=5 format=3 uid="uid://2e3wylhx2oix"]
+
+[ext_resource type="Shader" uid="uid://canqk4djy1pil" path="res://Shaders/M_Eileen_Armor_2.tres" id="5_blh3d"]
+[ext_resource type="Texture2D" uid="uid://buhfw16xw1v52" path="res://Eileen/Textures/Skin_1/T_Eileen_Armor_Normal.png" id="1_xcrar"]
+[ext_resource type="Texture2D" uid="uid://bop0i8f3ft1n5" path="res://Eileen/Textures/Skin_2/T_Eileen_Armor_Base_Color.png" id="2_ccn30"]
+[ext_resource type="Texture2D" uid="uid://5garwpvomuu4" path="res://Eileen/Textures/Skin_1/T_Eileen_Armor_Metallic.png" id="3_bdms8"]
+[ext_resource type="Texture2D" uid="uid://dnp4kymhdtyfs" path="res://Eileen/Textures/Skin_1/T_Eileen_Armor_AO.png" id="4_ce2nt"]
+
+[resource]
+resource_name = "M_Eileen_Armor_2"
+render_priority = 0
+shader = ExtResource("5_blh3d")
+shader_parameter/Generated_T_Eileen_Armor_Normal = ExtResource("1_xcrar")

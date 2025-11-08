@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://doeai7bpncd16"]
+
+[ext_resource type="PackedScene" uid="uid://bomabbhhs4y26" path="res://Eileen/Mesh/Separated_mesh/SK_Belt.glb" id="1_c8rwm"]
+[ext_resource type="Material" uid="uid://caw14sq83w0pl" path="res://Eileen/Materials/Skin_1/M_Eileen_Armor.tres" id="2_c8e5t"]
+
+[node name = "SK_Belt" instance = ExtResource("1_c8rwm")]
+
+[node name="Skeleton3D" parent="Mesh" index="0"]
+
+[node name="Mesh" parent="Mesh/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_c8e5t")

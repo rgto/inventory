@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctc5sj7v66vdc"]
+
+[ext_resource type="PackedScene" uid="uid://oweqvxuqg3od" path="res:///Engine/MapTemplates/SM_Template_Map_Floor.glb" id="1_biucx"]
+[ext_resource type="Material" uid="uid://b3xx5iesbo7ne" path="res:///Engine/EngineMaterials/DefaultMaterial.tres" id="2_di741"]
+
+[node name = "SM_Template_Map_Floor" instance = ExtResource("1_biucx")]
+
+[node name="Mesh" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_di741")

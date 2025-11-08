@@ -1,9 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dit5fjgxvvysf"]
+[gd_scene load_steps=10 format=3 uid="uid://dit5fjgxvvysf"]
 
 [ext_resource type="PackedScene" uid="uid://cr16qvxkng034" path="res://Player/PlayerPrefab.tscn" id="1_yqaf2"]
-[ext_resource type="PackedScene" uid="uid://dcig5eot87p8w" path="res://Inventory/TestSphere.tscn" id="3_uojng"]
-[ext_resource type="PackedScene" uid="uid://cfu02uxl7hlm3" path="res://Inventory/new_cube.tscn" id="4_coq8p"]
-[ext_resource type="PackedScene" uid="uid://cwv5vy8x4i3s2" path="res://Inventory/TestCilinder.tscn" id="6_7cbxl"]
+[ext_resource type="PackedScene" uid="uid://brpq524gd22b7" path="res://Items/Boots.tscn" id="2_ia1lp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pukp7"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -66,71 +64,37 @@ shape = SubResource("BoxShape3D_rt1in")
 
 [node name="PlayerBody" parent="." unique_id=1784928478 instance=ExtResource("1_yqaf2")]
 
-[node name="ItemTestCube16" parent="." unique_id=1174294792 instance=ExtResource("3_uojng")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2427, 2.99194, -4.95444)
+[node name="Red_Boots2" parent="." unique_id=265327318 instance=ExtResource("2_ia1lp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5004053, 7.500726, -5.680482)
 
-[node name="ItemTestCube17" parent="." unique_id=887604710 instance=ExtResource("3_uojng")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.959316, 3.96103, -4.95444)
+[node name="Red_Boots4" parent="." unique_id=682718033 instance=ExtResource("2_ia1lp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5004053, 7.2226944, -5.680482)
 
-[node name="ItemTestCube18" parent="." unique_id=210002194 instance=ExtResource("3_uojng")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15596, 3.95576, -4.95444)
+[node name="Red_Boots3" parent="." unique_id=973548641 instance=ExtResource("2_ia1lp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5004053, 7.1300173, -5.680482)
 
-[node name="ItemTestCube19" parent="." unique_id=1912743156 instance=ExtResource("3_uojng")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.327567, 4.92939, -4.95444)
+[node name="Red_Boots5" parent="." unique_id=1878528492 instance=ExtResource("2_ia1lp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5004053, 7.408049, -5.680482)
 
-[node name="ItemTestCube20" parent="." unique_id=364483184 instance=ExtResource("3_uojng")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48924, 4.48402, -4.95444)
+[node name="Red_Boots6" parent="." unique_id=1991614157 instance=ExtResource("2_ia1lp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5004053, 7.3153715, -5.680482)
 
-[node name="ItemTestCube21" parent="." unique_id=200991395 instance=ExtResource("3_uojng")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15806, 5.83727, -4.95444)
+[node name="Red_Boots7" parent="." unique_id=703175822 instance=ExtResource("2_ia1lp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.01893, -5.489917)
 
-[node name="ItemTestCube22" parent="." unique_id=1471081284 instance=ExtResource("3_uojng")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.591774, 6.67075, -4.95444)
+[node name="Red_Boots8" parent="." unique_id=1569130087 instance=ExtResource("2_ia1lp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.740898, -5.489917)
 
-[node name="TestCilinder3" parent="." unique_id=990682677 instance=ExtResource("6_7cbxl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.766567, -8.38524)
+[node name="Red_Boots9" parent="." unique_id=462736535 instance=ExtResource("2_ia1lp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.6482205, -5.489917)
 
-[node name="TestCilinder4" parent="." unique_id=1135268828 instance=ExtResource("6_7cbxl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.3249254, -8.629238)
+[node name="Red_Boots10" parent="." unique_id=753270346 instance=ExtResource("2_ia1lp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.9262524, -5.489917)
 
-[node name="TestCilinder5" parent="." unique_id=383083603 instance=ExtResource("6_7cbxl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.649851, -8.273542)
+[node name="Red_Boots11" parent="." unique_id=2039290231 instance=ExtResource("2_ia1lp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.8335752, -5.489917)
 
-[node name="TestCilinder6" parent="." unique_id=754109353 instance=ExtResource("6_7cbxl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.208209, -8.189327)
+[node name="Red_Boots12" parent="." unique_id=1346738839 instance=ExtResource("2_ia1lp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5555434, -5.489917)
 
-[node name="TestCilinder7" parent="." unique_id=787541535 instance=ExtResource("6_7cbxl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.766567, -8.38524)
-
-[node name="TestCilinder8" parent="." unique_id=1630631790 instance=ExtResource("6_7cbxl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.3249254, -8.629238)
-
-[node name="TestCilinder1" parent="." unique_id=1752221417 instance=ExtResource("6_7cbxl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8832836, -4.19262)
-
-[node name="TestCilinder2" parent="." unique_id=87274372 instance=ExtResource("6_7cbxl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4416418, -4.436618)
-
-[node name="NewCube4" parent="." unique_id=1179163377 instance=ExtResource("4_coq8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.850161, -3.7097073)
-
-[node name="NewCube3" parent="." unique_id=417336251 instance=ExtResource("4_coq8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.887621, -5.923276)
-
-[node name="NewCube2" parent="." unique_id=362637026 instance=ExtResource("4_coq8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9250803, -4.79134)
-
-[node name="NewCube5" parent="." unique_id=364619305 instance=ExtResource("4_coq8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.8127, -7.906296)
-
-[node name="NewCube6" parent="." unique_id=786456306 instance=ExtResource("4_coq8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.850161, -10.119864)
-
-[node name="NewCube7" parent="." unique_id=2043337812 instance=ExtResource("4_coq8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.887621, -8.987928)
-
-[node name="NewCube8" parent="." unique_id=1711237335 instance=ExtResource("4_coq8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9250803, -8.393177)
-
-[node name="NewCube" parent="." unique_id=1018674521 instance=ExtResource("4_coq8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9625401, -4.1965885)
+[node name="Red_Boots" parent="." unique_id=2067887933 instance=ExtResource("2_ia1lp")]

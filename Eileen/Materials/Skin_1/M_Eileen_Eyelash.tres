@@ -1,0 +1,9 @@
+[gd_resource type = "ShaderMaterial" load_steps=2 format=3 uid="uid://dmw2cmyvy0fk2"]
+
+[ext_resource type="Shader" uid="uid://c5dsmr3q8ud2a" path="res://Shaders/M_Eileen_Eyelash.tres" id="2_vx8h4"]
+[ext_resource type="Texture2D" uid="uid://f2yhugdqgw66" path="res://Eileen/Textures/Skin_1/T_Eileen_Eyelash_opacity.png" id="1_bg2db"]
+
+[resource]
+resource_name = "M_Eileen_Eyelash"
+render_priority = 0
+shader = ExtResource("2_vx8h4")

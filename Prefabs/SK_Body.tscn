@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dadb853pk18ey"]
+
+[ext_resource type="PackedScene" uid="uid://bq03euaqvdygq" path="res://Eileen/Mesh/Separated_mesh/SK_Body.glb" id="1_5v052"]
+[ext_resource type="Material" uid="uid://w4u3tncnr21u" path="res://Eileen/Materials/Skin_1/M_Eileen_Body.tres" id="2_c6518"]
+
+[node name = "SK_Body" instance = ExtResource("1_5v052")]
+
+[node name="Skeleton3D" parent="Mesh" index="0"]
+
+[node name="Mesh" parent="Mesh/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_c6518")

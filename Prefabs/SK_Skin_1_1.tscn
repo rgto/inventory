@@ -1,0 +1,21 @@
+[gd_scene load_steps=8 format=3 uid="uid://dclsxwgob07hj"]
+
+[ext_resource type="PackedScene" uid="uid://b1hh8jrqnhns0" path="res://Eileen/Mesh/Skin_1/SK_Skin_1.glb" id="1_cxk31"]
+[ext_resource type="Material" uid="uid://dmw2cmyvy0fk2" path="res://Eileen/Materials/Skin_1/M_Eileen_Eyelash.tres" id="2_bwrdm"]
+[ext_resource type="Material" uid="uid://jwrui6xuanbg" path="res://Eileen/Materials/Skin_2/M_Eileen_Body_2.tres" id="3_bjmqj"]
+[ext_resource type="Material" uid="uid://2e3wylhx2oix" path="res://Eileen/Materials/Skin_2/M_Eileen_Armor_2.tres" id="4_itmwj"]
+[ext_resource type="Material" uid="uid://c7otwrjgniq8x" path="res://Eileen/Materials/Skin_1/MI_Eileen_Hair_01.tres" id="5_qcv8d"]
+[ext_resource type="Material" uid="uid://cvw56fhpq3vdy" path="res://Eileen/Materials/Skin_2/M_Eileen_Cloak_2.tres" id="6_dvxx3"]
+[ext_resource type="Material" uid="uid://co8jqb4inh0r3" path="res://Eileen/Materials/Skin_2/M_Eileen_Head_2.tres" id="7_7l3uv"]
+
+[node name = "SK_Skin_1_1" instance = ExtResource("1_cxk31")]
+
+[node name="Skeleton3D" parent="Mesh" index="0"]
+
+[node name="Mesh" parent="Mesh/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_bwrdm")
+surface_material_override/1 = ExtResource("3_bjmqj")
+surface_material_override/2 = ExtResource("4_itmwj")
+surface_material_override/3 = ExtResource("5_qcv8d")
+surface_material_override/4 = ExtResource("6_dvxx3")
+surface_material_override/5 = ExtResource("7_7l3uv")

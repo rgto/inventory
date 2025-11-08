@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0orab2umdwsq"]
+
+[ext_resource type="PackedScene" uid="uid://cryv34o5tfcl5" path="res://Eileen/Mesh/Separated_mesh/SK_shoulder.glb" id="1_86ctv"]
+[ext_resource type="Material" uid="uid://2e3wylhx2oix" path="res://Eileen/Materials/Skin_2/M_Eileen_Armor_2.tres" id="2_itmwj"]
+
+[node name = "SK_shoulder" instance = ExtResource("1_86ctv")]
+
+[node name="Skeleton3D" parent="Mesh" index="0"]
+
+[node name="Mesh" parent="Mesh/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_itmwj")

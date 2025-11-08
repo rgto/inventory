@@ -52,6 +52,10 @@ public partial class GroundDropArea : ColorRect
             return;
         }
 
+
+        // Remove o item do slot.
+        foundSlot.FillSlot(null, false);
+
         // Verifica se é um PackedScene vazio (subrecurso inválido)
         if (!itemPrefab.CanInstantiate())
         {

@@ -1,0 +1,13 @@
+[gd_resource type = "ShaderMaterial" load_steps=5 format=3 uid="uid://w4u3tncnr21u"]
+
+[ext_resource type="Shader" uid="uid://co7e60e1yn33t" path="res://Shaders/M_Eileen_Body.tres" id="5_bkrhg"]
+[ext_resource type="Texture2D" uid="uid://c0ieh2cpodgd5" path="res://Eileen/Textures/Skin_1/T_Eileen_Body_Normal.png" id="1_c7g82"]
+[ext_resource type="Texture2D" uid="uid://dmdooruorn28i" path="res://Eileen/Textures/Skin_1/T_Eileen_Body_Base_Color.png" id="2_b747b"]
+[ext_resource type="Texture2D" uid="uid://r8c8clhpqy87" path="res://Eileen/Textures/Skin_1/T_Eileen_Body_Metallic.png" id="3_dklqi"]
+[ext_resource type="Texture2D" uid="uid://bok3y6jpxumrr" path="res://Eileen/Textures/Skin_1/T_Eileen_Body_AO.png" id="4_bbm0s"]
+
+[resource]
+resource_name = "M_Eileen_Body"
+render_priority = 0
+shader = ExtResource("5_bkrhg")
+shader_parameter/Generated_T_Eileen_Body_Normal = ExtResource("1_c7g82")

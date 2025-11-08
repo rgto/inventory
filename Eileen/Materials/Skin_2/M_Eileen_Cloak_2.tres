@@ -1,0 +1,13 @@
+[gd_resource type = "ShaderMaterial" load_steps=5 format=3 uid="uid://cvw56fhpq3vdy"]
+
+[ext_resource type="Shader" uid="uid://ck2dpsugtm5ri" path="res://Shaders/M_Eileen_Cloak_2.tres" id="5_oco72"]
+[ext_resource type="Texture2D" uid="uid://bhd4t6iporpoh" path="res://Eileen/Textures/Skin_2/T_Eileen_cloak_Normal.png" id="1_cijk7"]
+[ext_resource type="Texture2D" uid="uid://cjvmccr4plgo4" path="res://Eileen/Textures/Skin_2/T_Eileen_cloak_Base_Color.png" id="2_bdno6"]
+[ext_resource type="Texture2D" uid="uid://drx5hudng51i8" path="res://Eileen/Textures/Skin_2/T_Eileen_cloak_Metallic.png" id="3_c0ifn"]
+[ext_resource type="Texture2D" uid="uid://ln3qr6wp57ht" path="res://Eileen/Textures/Skin_1/T_Eileen_cloak_AO.png" id="4_c8uc4"]
+
+[resource]
+resource_name = "M_Eileen_Cloak_2"
+render_priority = 0
+shader = ExtResource("5_oco72")
+shader_parameter/Generated_T_Eileen_cloak_Normal = ExtResource("1_cijk7")

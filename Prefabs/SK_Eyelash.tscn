@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctp1xrp55y4lf"]
+
+[ext_resource type="PackedScene" uid="uid://cu60d5m8mrspf" path="res://Eileen/Mesh/Separated_mesh/SK_Eyelash.glb" id="1_bwcpu"]
+[ext_resource type="Material" uid="uid://dmw2cmyvy0fk2" path="res://Eileen/Materials/Skin_1/M_Eileen_Eyelash.tres" id="2_bwrdm"]
+
+[node name = "SK_Eyelash" instance = ExtResource("1_bwcpu")]
+
+[node name="Skeleton3D" parent="Mesh" index="0"]
+
+[node name="Mesh" parent="Mesh/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_bwrdm")

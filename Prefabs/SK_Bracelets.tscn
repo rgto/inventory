@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://6lkwr74mchsd"]
+
+[ext_resource type="PackedScene" uid="uid://ltq4uiwe7ehv" path="res://Eileen/Mesh/Separated_mesh/SK_Bracelets.glb" id="1_crp7d"]
+[ext_resource type="Material" uid="uid://caw14sq83w0pl" path="res://Eileen/Materials/Skin_1/M_Eileen_Armor.tres" id="2_c8e5t"]
+
+[node name = "SK_Bracelets" instance = ExtResource("1_crp7d")]
+
+[node name="Skeleton3D" parent="Mesh" index="0"]
+
+[node name="Mesh" parent="Mesh/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_c8e5t")

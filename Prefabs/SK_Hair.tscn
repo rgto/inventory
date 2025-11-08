@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmmom44kyh241"]
+
+[ext_resource type="PackedScene" uid="uid://cswowe2exlgng" path="res://Eileen/Mesh/Separated_mesh/SK_Hair.glb" id="1_dcoow"]
+[ext_resource type="Material" uid="uid://c7otwrjgniq8x" path="res://Eileen/Materials/Skin_1/MI_Eileen_Hair_01.tres" id="2_qcv8d"]
+
+[node name = "SK_Hair" instance = ExtResource("1_dcoow")]
+
+[node name="Skeleton3D" parent="Mesh" index="0"]
+
+[node name="Mesh" parent="Mesh/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_qcv8d")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2f8b5cypfrg7"]
+
+[ext_resource type="PackedScene" uid="uid://3dyuedaa2m1k" path="res://Eileen/Mesh/Separated_mesh/SK_cloak.glb" id="1_buaqp"]
+[ext_resource type="Material" uid="uid://cvw56fhpq3vdy" path="res://Eileen/Materials/Skin_2/M_Eileen_Cloak_2.tres" id="2_dvxx3"]
+
+[node name = "SK_cloak" instance = ExtResource("1_buaqp")]
+
+[node name="Skeleton3D" parent="Mesh" index="0"]
+
+[node name="Mesh" parent="Mesh/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_dvxx3")

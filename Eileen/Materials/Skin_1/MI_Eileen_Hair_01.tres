@@ -1,0 +1,64 @@
+[gd_resource type = "ShaderMaterial" load_steps=7 format=3 uid="uid://c7otwrjgniq8x"]
+
+[ext_resource type="Shader" uid="uid://dnqj8vqxpplve" path="res://Shaders/MI_Eileen_Hair_01.tres" id="7_ht0v3"]
+[ext_resource type="Texture2D" uid="uid://cvoiswhfsfxh" path="res://Eileen/Textures/Skin_1/Hair/Hair_v2/T_Eileen_Hair_opacity.png" id="1_dn6g4"]
+[ext_resource type="Texture2D" uid="uid://mk2li6ca4iiv" path="res://Eileen/Textures/Skin_1/Hair/Hair_v1/T_Eileen_Hair_D.png" id="2_ccgoe"]
+[ext_resource type="Texture2D" uid="uid://008v7x7463rr" path="res:///Engine/EngineMaterials/Good64x64TilingNoiseHighFreq.png" id="3_bylw7"]
+[ext_resource type="Texture2D" uid="uid://dclqkolh8mwo7" path="res://Eileen/Textures/Skin_1/Hair/Hair_v1/T_Eileen_Hair_Depth.png" id="4_cytt5"]
+[ext_resource type="Texture2D" uid="uid://cvoiswhfsfxh" path="res://Eileen/Textures/Skin_1/Hair/Hair_v2/T_Eileen_Hair_opacity.png" id="5_dn6g4"]
+[ext_resource type="Texture2D" uid="uid://dclqkolh8mwo7" path="res://Eileen/Textures/Skin_1/Hair/Hair_v1/T_Eileen_Hair_Depth.png" id="6_cytt5"]
+
+[resource]
+resource_name = "MI_Eileen_Hair_01"
+render_priority = 0
+shader = ExtResource("7_ht0v3")
+shader_parameter/Variation = false
+shader_parameter/ID = ExtResource("1_dn6g4")
+shader_parameter/MipBias = -1.000
+shader_parameter/RandomHueVariation = 0.000
+shader_parameter/Brightness = 1.000
+shader_parameter/RootColor = Vector4(0.110, 0.075, 0.047, 1.000)
+shader_parameter/TipColor = Vector4(0.110, 0.075, 0.051, 1.000)
+shader_parameter/Diffuse = ExtResource("2_ccgoe")
+shader_parameter/UseDiffuseBaseColor = false
+shader_parameter/Saturate = 1.000
+shader_parameter/Noisetiling = 24.000
+shader_parameter/RandomValueVariation = 0.000
+shader_parameter/Scatter = 0.300
+shader_parameter/Roughness = 0.380
+shader_parameter/Depth = ExtResource("4_cytt5")
+shader_parameter/EdgeMaskMin = 29.542
+shader_parameter/EdgeMaskContrast = -0.423
+shader_parameter/Alpha = ExtResource("1_dn6g4")
+shader_parameter/TangentA = Vector4(0.000, 0.000, 0.300, 1.000)
+shader_parameter/TangentB = Vector4(0.000, 0.000, -0.300, 1.000)
+shader_parameter/useFlowMapTexture = false
+shader_parameter/Tangent = Vector4(0.000, -1.000, 0.000, 1.000)
+shader_parameter/PixelDepthOffset_Root = 1.000
+shader_parameter/Gradient = ExtResource("4_cytt5")
+shader_parameter/PixelDepthOffset = 1.000
+shader_parameter/Variation_VS = false
+shader_parameter/ID_VS = ExtResource("1_dn6g4")
+shader_parameter/MipBias_VS = -1.000
+shader_parameter/RandomHueVariation_VS = 0.000
+shader_parameter/Brightness_VS = 1.000
+shader_parameter/RootColor_VS = Vector4(0.110, 0.075, 0.047, 1.000)
+shader_parameter/TipColor_VS = Vector4(0.110, 0.075, 0.051, 1.000)
+shader_parameter/Diffuse_VS = ExtResource("2_ccgoe")
+shader_parameter/UseDiffuseBaseColor_VS = false
+shader_parameter/Saturate_VS = 1.000
+shader_parameter/Noisetiling_VS = 24.000
+shader_parameter/RandomValueVariation_VS = 0.000
+shader_parameter/Scatter_VS = 0.300
+shader_parameter/Roughness_VS = 0.380
+shader_parameter/Depth_VS = ExtResource("4_cytt5")
+shader_parameter/EdgeMaskMin_VS = 29.542
+shader_parameter/EdgeMaskContrast_VS = -0.423
+shader_parameter/Alpha_VS = ExtResource("1_dn6g4")
+shader_parameter/TangentA_VS = Vector4(0.000, 0.000, 0.300, 1.000)
+shader_parameter/TangentB_VS = Vector4(0.000, 0.000, -0.300, 1.000)
+shader_parameter/useFlowMapTexture_VS = false
+shader_parameter/Tangent_VS = Vector4(0.000, -1.000, 0.000, 1.000)
+shader_parameter/PixelDepthOffset_Root_VS = 1.000
+shader_parameter/Gradient_VS = ExtResource("4_cytt5")
+shader_parameter/PixelDepthOffset_VS = 1.000
