@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dlrpebw3lna73"]
+[gd_scene load_steps=11 format=4 uid="uid://cu3811dr2g4tb"]
 
 [ext_resource type="Script" uid="uid://uj238sl7b45d" path="res://Inventory/InteractableItemMono.cs" id="1_i1ymj"]
 [ext_resource type="Texture2D" uid="uid://d1kc33j5clmtd" path="res://Textures/white_boots.png" id="2_i1ymj"]
@@ -304,6 +304,7 @@ ItemData = SubResource("Resource_uidex")
 ItemHighlightMesh = NodePath("Mesh")
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=1775850881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026924908, 0)
 mesh = SubResource("ArrayMesh_rslpi")
 skin = SubResource("Skin_g0faa")
 surface_material_override/0 = ExtResource("4_i1ymj")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://trw3aqoi4wtc"
-path="res://.godot/imported/red_boots.png-f62e3f3b47bfccfc4d20b04a39790da3.ctex"
+uid="uid://t7pkfmcrp2ea"
+path="res://.godot/imported/white_armor-remove.png-9c63819b6fe475284c317db961a759fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/red_boots.png"
-dest_files=["res://.godot/imported/red_boots.png-f62e3f3b47bfccfc4d20b04a39790da3.ctex"]
+source_file="res://Textures/white_armor-remove.png"
+dest_files=["res://.godot/imported/white_armor-remove.png-9c63819b6fe475284c317db961a759fb.ctex"]
 
 [params]
 

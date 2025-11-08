@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=4 uid="uid://brpq524gd22b7"]
 
 [ext_resource type="Script" uid="uid://uj238sl7b45d" path="res://Inventory/InteractableItemMono.cs" id="1_mgp6k"]
-[ext_resource type="Texture2D" uid="uid://ctecfbofk7s3m" path="res://Textures/red_boots.png" id="2_31onp"]
+[ext_resource type="Texture2D" uid="uid://trw3aqoi4wtc" path="res://Textures/red_boots.png" id="2_31onp"]
 [ext_resource type="Script" uid="uid://bbk5hftoaoxl1" path="res://Inventory/ItemDataMono.cs" id="2_r88aj"]
 [ext_resource type="Material" uid="uid://2e3wylhx2oix" path="res://Eileen/Materials/Skin_2/M_Eileen_Armor_2.tres" id="4_31onp"]
 
