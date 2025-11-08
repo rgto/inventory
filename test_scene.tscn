@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://dit5fjgxvvysf"]
+[gd_scene load_steps=15 format=3 uid="uid://dit5fjgxvvysf"]
 
 [ext_resource type="PackedScene" uid="uid://cr16qvxkng034" path="res://Player/PlayerPrefab.tscn" id="1_yqaf2"]
 [ext_resource type="PackedScene" uid="uid://cuiklvlmyu8n6" path="res://Inventory/TestCube.tscn" id="2_6xe7p"]
 [ext_resource type="Texture2D" uid="uid://djx5ov4jr3f3i" path="res://Textures/BoxIcon.png" id="3_2nij2"]
 [ext_resource type="PackedScene" uid="uid://dcig5eot87p8w" path="res://Inventory/TestSphere.tscn" id="3_uojng"]
 [ext_resource type="Script" uid="uid://bbk5hftoaoxl1" path="res://Inventory/ItemDataMono.cs" id="4_7cbxl"]
+[ext_resource type="PackedScene" uid="uid://cwv5vy8x4i3s2" path="res://Inventory/TestCilinder.tscn" id="6_7cbxl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pukp7"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -153,3 +154,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15806, 5.83727, -4.95444)
 
 [node name="ItemTestCube22" parent="." unique_id=1471081284 instance=ExtResource("3_uojng")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.591774, 6.67075, -4.95444)
+
+[node name="TestCilinder3" parent="." unique_id=990682677 instance=ExtResource("6_7cbxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.766567, -8.38524)
+
+[node name="TestCilinder4" parent="." unique_id=1135268828 instance=ExtResource("6_7cbxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.3249254, -8.629238)
+
+[node name="TestCilinder5" parent="." unique_id=383083603 instance=ExtResource("6_7cbxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.649851, -12.57786)
+
+[node name="TestCilinder6" parent="." unique_id=754109353 instance=ExtResource("6_7cbxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.208209, -12.821857)
+
+[node name="TestCilinder7" parent="." unique_id=787541535 instance=ExtResource("6_7cbxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.766567, -8.38524)
+
+[node name="TestCilinder8" parent="." unique_id=1630631790 instance=ExtResource("6_7cbxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.3249254, -8.629238)
+
+[node name="TestCilinder1" parent="." unique_id=1752221417 instance=ExtResource("6_7cbxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8832836, -4.19262)
+
+[node name="TestCilinder2" parent="." unique_id=87274372 instance=ExtResource("6_7cbxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4416418, -4.436618)
