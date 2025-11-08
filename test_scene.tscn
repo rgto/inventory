@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dit5fjgxvvysf"]
+[gd_scene load_steps=15 format=3 uid="uid://dit5fjgxvvysf"]
 
 [ext_resource type="PackedScene" uid="uid://cr16qvxkng034" path="res://Player/PlayerPrefab.tscn" id="1_yqaf2"]
+[ext_resource type="PackedScene" uid="uid://cuiv6jf2mqlu7" path="res://Items/Red_Pants.tscn" id="2_8pr8v"]
 [ext_resource type="PackedScene" uid="uid://dmi5o2kcm4fbb" path="res://Items/Red_Armor.tscn" id="2_coq8p"]
 [ext_resource type="PackedScene" uid="uid://brpq524gd22b7" path="res://Items/Red_Boots.tscn" id="2_ia1lp"]
+[ext_resource type="PackedScene" uid="uid://bebc2mej0dgji" path="res://Items/White_Pants.tscn" id="3_buypi"]
 [ext_resource type="PackedScene" uid="uid://cu3811dr2g4tb" path="res://Items/White_Boots.tscn" id="3_sasra"]
 [ext_resource type="PackedScene" uid="uid://c54yewo0w2xi" path="res://Items/White_Armor.tscn" id="4_coq8p"]
 
@@ -66,6 +68,30 @@ size = Vector3(10.0997, 2.17786, 1.62549)
 shape = SubResource("BoxShape3D_rt1in")
 
 [node name="PlayerBody" parent="." unique_id=1784928478 instance=ExtResource("1_yqaf2")]
+
+[node name="White_Pants2" parent="." unique_id=275928152 instance=ExtResource("2_8pr8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.643507, 3.851108, -4.772836)
+
+[node name="Red_Pants2" parent="." unique_id=1916416200 instance=ExtResource("3_buypi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.876056, 3.8852215, -4.611866)
+
+[node name="Red_Pants3" parent="." unique_id=627455527 instance=ExtResource("3_buypi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3679488, 3.8852215, -4.611866)
+
+[node name="Red_Pants4" parent="." unique_id=709979206 instance=ExtResource("3_buypi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2371213, 3.8852215, -4.611866)
+
+[node name="Red_Pants" parent="." unique_id=2013614692 instance=ExtResource("3_buypi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7589123, 3.8852215, -4.611866)
+
+[node name="White_Pants3" parent="." unique_id=1071171242 instance=ExtResource("2_8pr8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7506027, 3.851108, -4.772836)
+
+[node name="White_Pants4" parent="." unique_id=449295719 instance=ExtResource("2_8pr8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6899066, 3.851108, -4.772836)
+
+[node name="White_Pants" parent="." unique_id=524396909 instance=ExtResource("2_8pr8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3566012, 3.851108, -4.772836)
 
 [node name="White_Armor2" parent="." unique_id=743556988 instance=ExtResource("4_coq8p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.819828, 4.4510393, -5.206223)
