@@ -8,6 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_nanba"]
 script = ExtResource("2_vqocb")
+Type = 1
 ItemName = "TestSphere"
 Icon = ExtResource("2_nanba")
 ItemModelPrefab = SubResource("PackedScene_nanba")

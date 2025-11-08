@@ -1,10 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://dit5fjgxvvysf"]
+[gd_scene load_steps=12 format=3 uid="uid://dit5fjgxvvysf"]
 
 [ext_resource type="PackedScene" uid="uid://cr16qvxkng034" path="res://Player/PlayerPrefab.tscn" id="1_yqaf2"]
-[ext_resource type="PackedScene" uid="uid://cuiklvlmyu8n6" path="res://Inventory/TestCube.tscn" id="2_6xe7p"]
-[ext_resource type="Texture2D" uid="uid://djx5ov4jr3f3i" path="res://Textures/BoxIcon.png" id="3_2nij2"]
 [ext_resource type="PackedScene" uid="uid://dcig5eot87p8w" path="res://Inventory/TestSphere.tscn" id="3_uojng"]
-[ext_resource type="Script" uid="uid://bbk5hftoaoxl1" path="res://Inventory/ItemDataMono.cs" id="4_7cbxl"]
+[ext_resource type="PackedScene" uid="uid://cfu02uxl7hlm3" path="res://Inventory/new_cube.tscn" id="4_coq8p"]
 [ext_resource type="PackedScene" uid="uid://cwv5vy8x4i3s2" path="res://Inventory/TestCilinder.tscn" id="6_7cbxl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pukp7"]
@@ -34,12 +32,6 @@ size = Vector3(50, 1, 50)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rt1in"]
 size = Vector3(10.1387, 2.23071, 1.61328)
-
-[sub_resource type="Resource" id="Resource_r2fh1"]
-script = ExtResource("4_7cbxl")
-ItemName = "Xablauzao"
-Icon = ExtResource("3_2nij2")
-metadata/_custom_type_script = "uid://bbk5hftoaoxl1"
 
 [node name="TestScene" type="Node3D" unique_id=1934201930]
 
@@ -74,66 +66,6 @@ shape = SubResource("BoxShape3D_rt1in")
 
 [node name="PlayerBody" parent="." unique_id=1784928478 instance=ExtResource("1_yqaf2")]
 
-[node name="ItemTestCube" parent="." unique_id=1823931131 instance=ExtResource("2_6xe7p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.782544, 1.88402, -5.37182)
-ItemData = SubResource("Resource_r2fh1")
-
-[node name="ItemTestCube2" parent="." unique_id=1154826150 instance=ExtResource("2_6xe7p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.523464, 2.70257, -5.37182)
-ItemData = SubResource("Resource_r2fh1")
-
-[node name="ItemTestCube3" parent="." unique_id=149635027 instance=ExtResource("2_6xe7p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.195578, 1.95648, -5.37182)
-ItemData = SubResource("Resource_r2fh1")
-
-[node name="ItemTestCube4" parent="." unique_id=911822706 instance=ExtResource("2_6xe7p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21982, 1.88402, -5.98195)
-ItemData = SubResource("Resource_r2fh1")
-
-[node name="ItemTestCube5" parent="." unique_id=1339905950 instance=ExtResource("2_6xe7p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.960735, 2.70257, -5.98195)
-ItemData = SubResource("Resource_r2fh1")
-
-[node name="ItemTestCube6" parent="." unique_id=1818734922 instance=ExtResource("2_6xe7p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.241693, 1.95648, -5.98195)
-ItemData = SubResource("Resource_r2fh1")
-
-[node name="ItemTestCube7" parent="." unique_id=2017306254 instance=ExtResource("2_6xe7p")]
-transform = Transform3D(0.214633, 0, 0.976695, 0, 1, 0, -0.976695, 0, 0.214633, 0.780119, 3.43873, -6.03301)
-ItemData = SubResource("Resource_r2fh1")
-
-[node name="ItemTestCube8" parent="." unique_id=1995350175 instance=ExtResource("2_6xe7p")]
-transform = Transform3D(0.214633, 0, 0.976695, 0, 1, 0, -0.976695, 0, 0.214633, 0.724512, 4.25728, -5.77997)
-ItemData = SubResource("Resource_r2fh1")
-
-[node name="ItemTestCube9" parent="." unique_id=1401603845 instance=ExtResource("2_6xe7p")]
-transform = Transform3D(0.214633, 0, 0.976695, 0, 1, 0, -0.976695, 0, 0.214633, 0.570182, 3.51119, -5.07769)
-ItemData = SubResource("Resource_r2fh1")
-
-[node name="ItemTestCube10" parent="." unique_id=940430645 instance=ExtResource("2_6xe7p")]
-transform = Transform3D(0.601843, 0, 0.798615, 0, 1, 0, -0.798615, 0, 0.601843, 0.124461, 3.43873, -5.72738)
-ItemData = SubResource("Resource_r2fh1")
-
-[node name="ItemTestCube11" parent="." unique_id=1315978820 instance=ExtResource("2_6xe7p")]
-transform = Transform3D(0.601843, 0, 0.798615, 0, 1, 0, -0.798615, 0, 0.601843, -0.0314645, 4.25728, -5.52047)
-ItemData = SubResource("Resource_r2fh1")
-
-[node name="ItemTestCube12" parent="." unique_id=2025375538 instance=ExtResource("2_6xe7p")]
-transform = Transform3D(0.601843, 0, 0.798615, 0, 1, 0, -0.798615, 0, 0.601843, -0.464215, 3.51119, -4.94623)
-ItemData = SubResource("Resource_r2fh1")
-
-[node name="ItemTestCube13" parent="." unique_id=1945006108 instance=ExtResource("2_6xe7p")]
-transform = Transform3D(0.75503, 0, -0.65569, 0, 1, 0, 0.65569, 0, 0.75503, 0.676832, 4.99198, -5.12762)
-ItemData = SubResource("Resource_r2fh1")
-
-[node name="ItemTestCube14" parent="." unique_id=139814865 instance=ExtResource("2_6xe7p")]
-transform = Transform3D(0.75503, 0, -0.65569, 0, 1, 0, 0.65569, 0, 0.75503, 0.481219, 5.81053, -5.2975)
-ItemData = SubResource("Resource_r2fh1")
-
-[node name="ItemTestCube15" parent="." unique_id=1581855274 instance=ExtResource("2_6xe7p")]
-transform = Transform3D(0.75503, 0, -0.65569, 0, 1, 0, 0.65569, 0, 0.75503, -0.0616795, 5.06444, -5.76897)
-ItemData = SubResource("Resource_r2fh1")
-
 [node name="ItemTestCube16" parent="." unique_id=1174294792 instance=ExtResource("3_uojng")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2427, 2.99194, -4.95444)
 
@@ -162,10 +94,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.766567, -8.38524)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.3249254, -8.629238)
 
 [node name="TestCilinder5" parent="." unique_id=383083603 instance=ExtResource("6_7cbxl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.649851, -12.57786)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.649851, -8.273542)
 
 [node name="TestCilinder6" parent="." unique_id=754109353 instance=ExtResource("6_7cbxl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.208209, -12.821857)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.208209, -8.189327)
 
 [node name="TestCilinder7" parent="." unique_id=787541535 instance=ExtResource("6_7cbxl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.766567, -8.38524)
@@ -178,3 +110,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8832836, -4.19262)
 
 [node name="TestCilinder2" parent="." unique_id=87274372 instance=ExtResource("6_7cbxl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4416418, -4.436618)
+
+[node name="NewCube4" parent="." unique_id=1179163377 instance=ExtResource("4_coq8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.850161, -3.7097073)
+
+[node name="NewCube3" parent="." unique_id=417336251 instance=ExtResource("4_coq8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.887621, -5.923276)
+
+[node name="NewCube2" parent="." unique_id=362637026 instance=ExtResource("4_coq8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9250803, -4.79134)
+
+[node name="NewCube5" parent="." unique_id=364619305 instance=ExtResource("4_coq8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.8127, -7.906296)
+
+[node name="NewCube6" parent="." unique_id=786456306 instance=ExtResource("4_coq8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.850161, -10.119864)
+
+[node name="NewCube7" parent="." unique_id=2043337812 instance=ExtResource("4_coq8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.887621, -8.987928)
+
+[node name="NewCube8" parent="." unique_id=1711237335 instance=ExtResource("4_coq8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9250803, -8.393177)
+
+[node name="NewCube" parent="." unique_id=1018674521 instance=ExtResource("4_coq8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9625401, -4.1965885)
