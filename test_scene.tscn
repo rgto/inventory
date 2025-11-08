@@ -1,11 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://dit5fjgxvvysf"]
+[gd_scene load_steps=17 format=3 uid="uid://dit5fjgxvvysf"]
 
 [ext_resource type="PackedScene" uid="uid://cr16qvxkng034" path="res://Player/PlayerPrefab.tscn" id="1_yqaf2"]
 [ext_resource type="PackedScene" uid="uid://cuiv6jf2mqlu7" path="res://Items/Red_Pants.tscn" id="2_8pr8v"]
 [ext_resource type="PackedScene" uid="uid://dmi5o2kcm4fbb" path="res://Items/Red_Armor.tscn" id="2_coq8p"]
 [ext_resource type="PackedScene" uid="uid://brpq524gd22b7" path="res://Items/Red_Boots.tscn" id="2_ia1lp"]
+[ext_resource type="PackedScene" uid="uid://8np63dr8iqe0" path="res://Items/Red_Belt.tscn" id="2_njel3"]
 [ext_resource type="PackedScene" uid="uid://bebc2mej0dgji" path="res://Items/White_Pants.tscn" id="3_buypi"]
 [ext_resource type="PackedScene" uid="uid://cu3811dr2g4tb" path="res://Items/White_Boots.tscn" id="3_sasra"]
+[ext_resource type="PackedScene" uid="uid://co33i5385ro6e" path="res://Items/White_Belt.tscn" id="3_vr1i5"]
 [ext_resource type="PackedScene" uid="uid://c54yewo0w2xi" path="res://Items/White_Armor.tscn" id="4_coq8p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pukp7"]
@@ -68,6 +70,30 @@ size = Vector3(10.0997, 2.17786, 1.62549)
 shape = SubResource("BoxShape3D_rt1in")
 
 [node name="PlayerBody" parent="." unique_id=1784928478 instance=ExtResource("1_yqaf2")]
+
+[node name="Red_Belt2" parent="." unique_id=2098296789 instance=ExtResource("2_njel3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.948007, 3.2627754, -4.357825)
+
+[node name="Red_Belt3" parent="." unique_id=821322505 instance=ExtResource("2_njel3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.948007, 3.2627754, -4.684586)
+
+[node name="Red_Belt4" parent="." unique_id=863388036 instance=ExtResource("2_njel3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.948007, 3.2627754, -5.080747)
+
+[node name="Red_Belt" parent="." unique_id=1117024754 instance=ExtResource("2_njel3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.948007, 3.2627754, -5.4994316)
+
+[node name="White_Belt2" parent="." unique_id=337503717 instance=ExtResource("3_vr1i5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.993644, -3.7885323)
+
+[node name="White_Belt3" parent="." unique_id=1462738082 instance=ExtResource("3_vr1i5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.993644, -4.1211247)
+
+[node name="White_Belt4" parent="." unique_id=2053408840 instance=ExtResource("3_vr1i5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.993644, -4.5308137)
+
+[node name="White_Belt" parent="." unique_id=1463314735 instance=ExtResource("3_vr1i5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.993644, -3.448246)
 
 [node name="White_Pants2" parent="." unique_id=275928152 instance=ExtResource("2_8pr8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.643507, 3.851108, -4.772836)
