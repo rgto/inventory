@@ -65,17 +65,19 @@ public partial class PlayerControllerMono : CharacterBody3D
 		Vector2 inputDir = Input.GetVector("Left", "Right", "Forward", "Down");
 		Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
 		
-        // --- NOVO: Lógica para rotacionar o modelo do personagem ---
-        if (CharacterModel != null && direction != Vector3.Zero)
-        {
-            // Usamos a direção do movimento para criar uma nova base de rotação que "olha" para essa direção.
-            // O vetor Vector3.Up garante que o personagem não incline para cima ou para baixo.
-            //var targetBasis = Basis.LookingAt(direction, Vector3.Up);
-            var targetBasis = Basis.LookingAt(-direction, Vector3.Up);
-            // Usamos Slerp (Spherical Linear Interpolation) para girar o modelo suavemente.
-            // Isso evita uma rotação instantânea e "dura".
-            CharacterModel.Basis = CharacterModel.Basis.Slerp(targetBasis, (float)(delta * ModelRotationSpeed));
-        }
+        // --- Lógica de Rotação do Modelo CORRIGIDA ---
+		if (CharacterModel != null && direction != Vector3.Zero)
+		{
+			// 1. Calcula a rotação desejada em coordenadas GLOBAIS (do mundo)
+			var worldTargetBasis = Basis.LookingAt(-direction, Vector3.Up);
+
+			// 2. Converte a rotação global para a rotação LOCAL que o modelo precisa ter,
+			//    "removendo" a rotação do pai (PlayerBody).
+			var localTargetBasis = this.Basis.Inverse() * worldTargetBasis;
+
+			// 3. Interpola a rotação LOCAL do modelo para o novo alvo LOCAL.
+			CharacterModel.Basis = CharacterModel.Basis.Slerp(localTargetBasis, (float)(delta * ModelRotationSpeed));
+		}
 
 		if (direction != Vector3.Zero)
 		{
